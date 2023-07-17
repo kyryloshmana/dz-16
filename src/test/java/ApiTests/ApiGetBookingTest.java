@@ -10,6 +10,7 @@ public class ApiGetBookingTest extends BaseApiTest {
     @Test
     public void getBookingsTest(){
         Response response = getRequest();
+        response.then().statusCode(200);
         response.prettyPrint();
         ResponseBody[] responseBody = response.as(ResponseBody[].class);
 

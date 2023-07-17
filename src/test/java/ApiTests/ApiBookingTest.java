@@ -10,6 +10,7 @@ public class ApiBookingTest extends BaseApiTest{
     @Test
     public void createBooking (){
         Response response = postRequest(requestBookingFirst());
+        response.then().statusCode(200);
         response.prettyPrint();
         ResponseBooking responseBooking = response.as(ResponseBooking.class);
         SoftAssert softAssert = new SoftAssert();

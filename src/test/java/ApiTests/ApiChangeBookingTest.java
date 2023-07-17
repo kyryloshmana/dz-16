@@ -13,6 +13,8 @@ public class ApiChangeBookingTest extends BaseApiTest {
     int id = getNewBooking().getBookingid();
 
     Response response = putRequest(requestBookingSecond(), id);
+    response.then().statusCode(200);
+    response.prettyPrint();
     ResponseBookingBody responseBooking = response.as(ResponseBookingBody.class);
 
     SoftAssert softAssert = new SoftAssert();
@@ -31,6 +33,8 @@ public class ApiChangeBookingTest extends BaseApiTest {
     public void patchUpdateBookingPrice() {
        int id = getNewBooking().getBookingid();
        Response response = patchRequest(requestBookingThird(), id);
+       response.then().statusCode(200);
+       response.prettyPrint();
        ResponseBookingBody responseBooking = response.as(ResponseBookingBody.class);
        SoftAssert softAssert = new SoftAssert();
        softAssert.assertEquals(responseBooking.getFirstname(), apiValues.getFirstname());

@@ -97,6 +97,7 @@ public class BaseApiTest {
                 .header("Accept", "application/json")
                 .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .auth().basic("Admin", "password123")
+
                 //.body(requestBooking)
                 .delete("/booking/" + id);
     }
